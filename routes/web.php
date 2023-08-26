@@ -22,5 +22,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //lista fumetti
 Route::get('/comics', [ComicController::class, 'index'])->name('comics.index');
 
+//form fumetti
+Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
+
 //singoli fumetti
 Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');

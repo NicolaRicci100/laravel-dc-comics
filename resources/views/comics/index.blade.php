@@ -2,6 +2,9 @@
 @section('title', 'Comics')
 @section('main')
     <h1 class="text-secondary">Elenco dei Fumetti</h1>
+    <div class="d-flex justify-content-end">
+        <a href="{{ route('comics.create') }}" class="btn btn-outline-secondary my-3"> Aggiungi un prodotto</a>
+    </div>
     <table class="table">
         <thead>
             <tr>

@@ -31,8 +31,7 @@
             </ul>
         </div>
         <footer class="d-flex justify-content-end mt-3">
-            <a href="{{ route('comics.index') }}" class="btn btn-secondary">Torna alla lista</a>
+            <a href="{{ route('comics.index') }}" class="btn btn-outline-secondary my-3">Torna alla lista</a>
         </footer>
-
     </section>
 @endsection
