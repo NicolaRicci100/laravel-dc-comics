@@ -1,11 +1,17 @@
 <header>
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo DC"
-                    class="d-inline-block img-fluid">
-                <h1 class="d-inline ms-3 text-secondary align-middle">Home</h1>
-            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fs-3 @if (request()->routeIs('home')) active @endif"
+                        href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-3 @if (request()->routeIs('comics*')) active @endif"
+                        href="{{ route('comics.index') }}">Comics</a>
+                </li>
+            </ul>
+        </div>
         </div>
     </nav>
 </header>
