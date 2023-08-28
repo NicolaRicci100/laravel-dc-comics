@@ -26,6 +26,7 @@
                     <td>{{ ucwords($comic->type) }}</td>
                     <td class="d-flex justify-content-end">
                         <a class="btn btn-outline-secondary" href="{{ route('comics.show', $comic) }}">Info</a>
+                        <a class="btn btn-outline-danger ms-1" href="{{ route('comics.edit', $comic) }}">Modifica</a>
                     </td>
                 </tr>
             @endforeach
