@@ -86,9 +86,9 @@ class ComicController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        Comic::destroy($id);
-        return to_route('comics.index');
+        $comic->delete();
+        return to_route('comics.index')->with('delete', "Il prodotto $comic->title è stato eliminato");
     }
 }

@@ -34,7 +34,8 @@
             <a href="{{ route('comics.index') }}" class="btn btn-outline-secondary my-3">Torna alla lista</a>
             <div class="mt-3">
                 <a href="{{ route('comics.edit', $comic) }}" class="btn btn-outline-danger me-4">Modifica</a>
-                <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="POST">
+                <form class="d-inline delete-form" action="{{ route('comics.destroy', $comic) }}" method="POST"
+                    data-name="{{ $comic->title }}">
                     @csrf
                     @method('DELETE')
                     <button class="btn btn-danger ">Elimina</button>
@@ -42,4 +43,7 @@
             </div>
         </footer>
     </section>
+@endsection
+@section('scripts')
+    @vite('resources/js/confirm-delete.js');
 @endsection
