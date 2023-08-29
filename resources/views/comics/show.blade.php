@@ -30,9 +30,16 @@
                 </li>
             </ul>
         </div>
-        <footer class="d-flex justify-content-end mt-3">
+        <footer class="d-flex justify-content-between mt-3">
             <a href="{{ route('comics.index') }}" class="btn btn-outline-secondary my-3">Torna alla lista</a>
-            <a href="{{ route('comics.edit', $comic) }}" class="btn btn-outline-danger my-3 ms-3">Modifica</a>
+            <div class="mt-3">
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-outline-danger me-4">Modifica</a>
+                <form class="d-inline" action="{{ route('comics.destroy', $comic) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger ">Elimina</button>
+                </form>
+            </div>
         </footer>
     </section>
 @endsection

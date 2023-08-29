@@ -88,6 +88,7 @@ class ComicController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Comic::destroy($id);
+        return to_route('comics.index');
     }
 }
